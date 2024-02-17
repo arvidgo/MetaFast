@@ -1,4 +1,4 @@
-	Command being timed: "../MetaFast/ReadMapping/rm -ax sr -t 1 -2 -n 3 -r 15 --filter=sneakysnake --sam-hit-only --secondary=yes Results/ContainmentSearch/subset_db.fna ../Data/ReadSets/test.fastq"
+	Command being timed: "../MetaTrinity/ReadMapping/rm -ax sr -t 1 -2 -n 3 -r 15 --filter=sneakysnake --sam-hit-only --secondary=yes Results/ContainmentSearch/subset_db.fna ../Data/ReadSets/test.fastq"
 	User time (seconds): 6.14
 	System time (seconds): 0.43
 	Percent of CPU this job got: 99%

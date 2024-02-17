@@ -23,7 +23,7 @@ def profile_parseargs():  # handle user arguments
 	parser.add_argument('data', help='Path to data/ directory with the files from setup_data.sh')
 	parser.add_argument('--db', default='NONE', help='Path to database from containment_search. Required if read files given')
 	parser.add_argument('--dbinfo', default='AUTO', help='Location of db_info file. Default: data/db_info.txt')
-	parser.add_argument('--input_type', default='AUTO', choices=['fastq', 'fasta', 'sam', 'AUTO'],
+	parser.add_argument('--input_type', default='AUTO', choices=['fastq', 'fasta', 'sam', 'mmi', 'AUTO'],
 		help='Type of input file (fastq/fasta/sam). Default: try to automatically determine')
 	parser.add_argument('--length_normalize', action='store_true', help='Normalize abundances by genome length.')
 	parser.add_argument('--low_mem', action='store_true',
@@ -412,7 +412,7 @@ def compute_abundances(args, infile, acc2info, tax2info):
 	if args.input_type == 'sam': # input stream from sam file
 		instream = open(infile, 'r')
 	else:  # run minimap2 and stream its output as input
-		mapper = subprocess.Popen(['../MetaFast/ReadMapping/rm', '-ax', 'sr', '-t', '1', '-2', '-n', '3', '-r', str(args.edit_dist_threshold), '--filter='+str(args.filter), '--secondary=yes', args.db, infile], stdout=subprocess.PIPE, bufsize=1)
+		mapper = subprocess.Popen([os.path.join(os.path.dirname(os.path.abspath(__file__)), '../ReadMapping/rm'), '-ax', 'sr', '-t', '1', '-2', '-n', '3', '-r', str(args.edit_dist_threshold), '--filter='+str(args.filter), '--secondary=yes', args.db, infile], stdout=subprocess.PIPE, bufsize=1)
 		instream = iter(mapper.stdout.readline, "")
 	taxids2abs, multimapped, low_mem_mmap = map_and_process(args,
 		instream, acc2info, tax2info)
@@ -515,6 +515,8 @@ def map_main(args = None):
 			args.input_type = 'fasta'
 		elif splits[-1] == 'sam':
 			args.input_type = 'sam'
+		elif splits[-1] == 'mmi':
+			args.input_type = 'mmi'
 		else:
 			sys.exit('Could not auto-determine file type. Use --input_type.')
 	open(args.output, 'w').close()  # test to see if writeable

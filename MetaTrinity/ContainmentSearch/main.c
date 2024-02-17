@@ -40,7 +40,6 @@ Modified Copyright (C) 2021 Intel Corporation
 #include <x86intrin.h>
 #include <immintrin.h>
 #include <sys/time.h>
-#include <string>
 #include <map>
 #include <stdint.h>
 #include <unistd.h>

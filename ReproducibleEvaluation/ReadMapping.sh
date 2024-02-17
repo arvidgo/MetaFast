@@ -25,7 +25,7 @@ echo "Results/ReadMapping";
 echo "\n================================== ALGORITHMS =================================="
 echo "adjacency-filter base-counting edlib grim_original grim_original_tweak hd magnet qgram shd shouji sneakysnake"
 
-DIR="../MetaFast/ReadMapping"
+DIR="../MetaTrinity/ReadMapping"
 
 
 for filter in hd adjacency-filter base-counting magnet qgram shd shouji sneakysnake edlib grim_original grim_original_tweak

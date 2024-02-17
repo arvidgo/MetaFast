@@ -4,6 +4,7 @@
 #include <vector>
 #include <mutex>
 #include <unordered_map>
+#include <string>
 
 extern int cntmapsizethreshold;
 typedef struct {

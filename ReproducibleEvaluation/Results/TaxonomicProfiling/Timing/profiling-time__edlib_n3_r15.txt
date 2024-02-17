@@ -1,4 +1,4 @@
-	Command being timed: "python3 ../MetaFast/Scripts/read_mapping.py Results/ReadMapping/SAM-files/edlib__n3_r15.sam /home/arvidg/MetaFast/Data/RefData/test/ --input_type sam --verbose --output Results/TaxonomicProfiling/Profiles/edlib__n3_r15.tsv"
+	Command being timed: "python3 ../MetaTrinity/Scripts/read_mapping.py Results/ReadMapping/SAM-files/edlib__n3_r15.sam /home/arvidg/MetaTrinity/Data/RefData/test/ --input_type sam --verbose --output Results/TaxonomicProfiling/Profiles/edlib__n3_r15.tsv"
 	User time (seconds): 2.10
 	System time (seconds): 0.19
 	Percent of CPU this job got: 99%

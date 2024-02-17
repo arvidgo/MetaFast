@@ -3,7 +3,7 @@
 
 echo "\n=======================================================  RUNNING STAGE 1: Containment Search  ======================================================\n"
 
-/usr/bin/time -v --output Results/ContainmentSearch/ContainmentSearch_time.txt python3 ../MetaTrinity/Scripts/containment_search.py ../Data/ReadSets/test.fastq ../Data/RefData/test --mmi_dir ../Data/RefData/test --temp_dir Results/ContainmentSearch --translation ../Data/RefData/test/translate/translate_sorted.csv --keep_temp_files
+/usr/bin/time -v --output Results/ContainmentSearch/ContainmentSearch_time.txt python3 ../MetaTrinity/Scripts/containment_search.py ../Data/ReadSets/test.fastq ../Data/RefData/test ../Data/RefData/test ../Data/RefData/test/translate/translate_sorted.csv --temp_dir Results/ContainmentSearch --keep_temp_files
 
 echo "\n=======================================================  DONE STAGE 1 ======================================================"
 

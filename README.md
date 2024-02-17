@@ -19,9 +19,11 @@ Described by Arvid E. Gollwitzer et al. (current version at https://doi.org/10.4
 
 
 ## <a name="install"></a>Installation
+The provided tests uses large files, make sure you have **Git LFS installed and initialized** before proceeding!
 ```sh
 # Download MetaTrinity
 git clone https://github.com/CMU-SAFARI/MetaTrinity.git
+cd MetaTrinity
 
 # Compile the Containment Search (cs) Stage 
 make cs -C MetaTrinity/ContainmentSearch
@@ -51,7 +53,8 @@ The testing environment provides all output results from each stage under *Repro
 ```sh
 # Run the complete MetaTrinity Pipeline
 # Results are written to: ReproducibleEvaluation/Results/MetaTrinity
-python3 Scripts/MetaTrinity.py ../Data/ReadSets/test.fastq ../Data/RefData/test/ --mmi_dir ../Data/RefData/test/ --temp_dir ../ReproducibleEvaluation/Results/MetaTrinity  --translation ../Data/RefData/test/translate/translate_sorted.csv --keep_temp_files --filter base-counting --edit_dist_threshold 15 --output ../ReproducibleEvaluation/Results/MetaTrinity/profile.tsv
+cd MetaTrinity
+python3 Scripts/MetaTrinity.py ../Data/ReadSets/test.fastq ../Data/RefData/test/ ../Data/RefData/test/ ../Data/RefData/test/translate/translate_sorted.csv --temp_dir ../ReproducibleEvaluation/Results/MetaTrinity  --keep_temp_files --filter base-counting --edit_dist_threshold 15 --output ../ReproducibleEvaluation/Results/MetaTrinity/profile.tsv
 
 # Run each of the three pipeline stages individually (repeated for every edit distance approximation algorithm)
 # Results are written to (for each pipeline stage, respectively): 
