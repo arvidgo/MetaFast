@@ -70,7 +70,7 @@ cd ReproducibleEvaluation
 <summary>Complete MetaTrinity Pipeline</summary>
 <pre>
 python3 Scripts/MetaTrinity.py ../Data/ReadSets/test.fastq ../Data/RefData/test/ --mmi_dir ../Data/RefData/test/ --temp_dir ../ReproducibleEvaluation/Results/MetaTrinity  --translation ../Data/RefData/test/translate/translate_sorted.csv --keep_temp_files --filter base-counting --edit_dist_threshold 15 --output ../ReproducibleEvaluation/Results/MetaTrinity/profile.tsv
-
+<br>
 
 Found -n 3?, -b set 0?, mmi /home/arvidg/git/MetaTrinity/Data/RefData/test?, reads /home/arvidg/git/MetaTrinity/Data/ReadSets/test.fastq?, tr /home/arvidg/git/MetaTrinity/Data/RefData/test/translate/translate_sorted.csv?, out /home/arvidg/git/MetaTrinity/ReproducibleEvaluation/Results/MetaTrinity/ContainmentResults.csv?
 fCnt is 1
@@ -440,13 +440,15 @@ Profiling for edlib
 ## <a name="usecases"></a>Use Cases
 ```sh
 # Containment Search 
-cs ../../Data/RefData/test ../../Data/ReadSets/test.fastq translate/translate_sorted_C.csv ../../ReproducibleEvaluation/Results/ContainmentSearch/ContainmentResults.csv
+# cd MetaTrinity/ContainmentSearch
+./cs ../../Data/RefData/test ../../Data/ReadSets/test.fastq ../../Data/RefData/test/translate/translate_sorted.csv ../../ReproducibleEvaluation/Results/ContainmentSearch/ContainmentResults.csv
 
 # Read Mapping (all edit distance approximation algorithms)
-ReadMapping.sh -s 15 -e 15 -i 1 -n 3 -r ../Data/ReadSets/test.fastq -d Results/ContainmentSearch -t Results/ReadMapping/Timing -o Results/ReadMapping/SAM-files
+# cd ReproducibleEvaluation
+./ReadMapping.sh -s 15 -e 15 -i 1 -n 3 -r ../Data/ReadSets/test.fastq -d Results/ContainmentSearch -t Results/ReadMapping/Timing -o Results/ReadMapping/SAM-files
 
 # Taxonomic Profiling (all edit distance approximation algorithms)
-TaxonomicProfiling.sh -r 15 -n 3 -s Results/ReadMapping/SAM-files -o Results/TaxonomicProfiling
+./TaxonomicProfiling.sh -r 15 -n 3 -s Results/ReadMapping/SAM-files -o Results/TaxonomicProfiling
 ```
 
 

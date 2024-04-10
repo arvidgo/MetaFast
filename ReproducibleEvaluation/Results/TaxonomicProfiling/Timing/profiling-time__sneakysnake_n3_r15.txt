@@ -1,18 +1,18 @@
-	Command being timed: "python3 ../MetaTrinity/Scripts/read_mapping.py Results/ReadMapping/SAM-files/sneakysnake__n3_r15.sam /home/arvidg/MetaTrinity/Data/RefData/test/ --input_type sam --verbose --output Results/TaxonomicProfiling/Profiles/sneakysnake__n3_r15.tsv"
-	User time (seconds): 2.22
-	System time (seconds): 0.28
+	Command being timed: "python3 ../MetaTrinity/Scripts/read_mapping.py Results/ReadMapping/SAM-files/sneakysnake__n3_r15.sam ../Data/RefData/test/ --input_type sam --verbose --output Results/TaxonomicProfiling/Profiles/sneakysnake__n3_r15.tsv"
+	User time (seconds): 2.50
+	System time (seconds): 0.24
 	Percent of CPU this job got: 99%
-	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:02.52
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:02.75
 	Average shared text size (kbytes): 0
 	Average unshared data size (kbytes): 0
 	Average stack size (kbytes): 0
 	Average total size (kbytes): 0
-	Maximum resident set size (kbytes): 221808
+	Maximum resident set size (kbytes): 223220
 	Average resident set size (kbytes): 0
 	Major (requiring I/O) page faults: 0
-	Minor (reclaiming a frame) page faults: 84954
-	Voluntary context switches: 77
-	Involuntary context switches: 23
+	Minor (reclaiming a frame) page faults: 60099
+	Voluntary context switches: 92
+	Involuntary context switches: 21
 	Swaps: 0
 	File system inputs: 0
 	File system outputs: 8
