@@ -36,10 +36,10 @@ make rm -C MetaTrinity/ReadMapping
 ## <a name="use"></a>Usage
 ```sh
 # The Complete Pipeline                  
-python3 MetaTrinity.py <reads.fq> <Ref_DB> --output profile.tsv
+python3 MetaTrinity.py <reads.fq> <Ref_DB> <mmi_dir> <translation_file> --output profile.tsv
 
 # Containment Search                    
-python3 containment_search.py <reads.fq> <Ref_DB> --db subset_db.fna
+python3 containment_search.py <reads.fq> <Ref_DB> <mmi_dir> <translation_file> --db subset_db.fna
 
 # Read Mapping
 python3 read_mapping.py <reads.fq> <Ref_DB> --db subset_db.fna --output profile.tsv
@@ -70,6 +70,8 @@ cd ReproducibleEvaluation
 <summary>Complete MetaTrinity Pipeline</summary>
 <pre>
 python3 Scripts/MetaTrinity.py ../Data/ReadSets/test.fastq ../Data/RefData/test/ --mmi_dir ../Data/RefData/test/ --temp_dir ../ReproducibleEvaluation/Results/MetaTrinity  --translation ../Data/RefData/test/translate/translate_sorted.csv --keep_temp_files --filter base-counting --edit_dist_threshold 15 --output ../ReproducibleEvaluation/Results/MetaTrinity/profile.tsv
+
+
 Found -n 3?, -b set 0?, mmi /home/arvidg/git/MetaTrinity/Data/RefData/test?, reads /home/arvidg/git/MetaTrinity/Data/ReadSets/test.fastq?, tr /home/arvidg/git/MetaTrinity/Data/RefData/test/translate/translate_sorted.csv?, out /home/arvidg/git/MetaTrinity/ReproducibleEvaluation/Results/MetaTrinity/ContainmentResults.csv?
 fCnt is 1
 Creating thread 0
@@ -453,7 +455,7 @@ MetaTrinity performs metagenomic classification in three stages: 1) containment 
 In the second pipeline stage, we perform heuristic read mapping. The goal of our read mapping stage is to filter the metagenomic read set quickly and accurately in two steps. In the first read-filtering step, we examine the mapping locations of all reads and exclude candidate locations that do not achieve a minimum number of seed hits in the subset database. We exclude an entire read sequence if this read does not have at least one mapping location in the subset database with a number of seed hits above the threshold. After this step, we are left with a set of sequence pairs. Each sequence pair consists of a subsequence extracted from a specific mapping location in the subset database and a read sequence. The mapping regions in the subset database are determined based on the locations of seed hits. To accurately quantify the similarities for all the remaining sequence pairs, the second read filtering step uses heuristic algorithms to compute an approximate edit distance for each pair. Sequence pairs with an approximated edit distance above a user-defined cutoff threshold are filtered out from further analysis. We record the associated reference genome, mapping location, and edit distance for all remaining reads.
 Based on the read mapping results, we perform taxonomic profiling and relative abundance estimation in the third stage. In this pipeline stage, we perform only one filtering step: we reduce the false positive rate and improve classification accuracy by excluding all organisms with relative abundance estimates below a user-defined cutoff threshold from the final taxonomic profile.
 
-![Alt text](MetaTrinity.png)
+![MetaTrinity pipeline](Figures/MetaTrinity.png)
 
 
 ##  <a name="results"></a>Benefits of MetaTrinity

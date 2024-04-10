@@ -474,7 +474,7 @@ void mm_map_frag(const mm_idx_t *mi, int n_segs, const int *qlens, const char **
 	// KSORT_INIT(seed_map_sort, seed_map_entry_t, ks_lt_seed_map_entry);
 
 	seed_map_entry_t* seed_map;
-	seed_map = (seed_map_entry_t*)calloc(n_a, sizeof(seed_map_entry_t));
+	seed_map = (seed_map_entry_t*)calloc(n_a > locations_per_read ? n_a : locations_per_read, sizeof(seed_map_entry_t));
 
 
 
@@ -490,8 +490,8 @@ void mm_map_frag(const mm_idx_t *mi, int n_segs, const int *qlens, const char **
 				// if (Accepted<MAX_NUM_MAPPING_LOCATION_PER_READ){
 					if ((i<n_a) && (((int32_t)a[i].y - (int32_t)a[i-1].y) - ((int32_t)a[i].x - (int32_t)a[i-1].x) ==0)) {
 						if (Seed_Num == 1) {
-							mappingStartingPosition = ((int32_t)a[i-1].x - (int32_t)a[i-1].y);
-							// printf("mappingStartingPosition\t%d\n", mappingStartingPosition);
+							mappingStartingPosition = abs(a[i-1].x - a[i-1].y);
+							//if(mappingStartingPosition < 0) fprintf(stderr, "mappingStartingPosition\t%d\n", mappingStartingPosition);
 						}
 						Seed_Num++;
 					}
@@ -508,11 +508,12 @@ void mm_map_frag(const mm_idx_t *mi, int n_segs, const int *qlens, const char **
 
 						if (i<n_a) {
 							Seed_Num=1;
-							mappingStartingPosition = ((int32_t)a[i].x - (int32_t)a[i].y);
+							mappingStartingPosition = abs(a[i].x - a[i].y);
 						}
 					}
 
 					//if (mm_dbg_flag & MM_DBG_PRINT_SEED)
+					//if(mappingStartingPosition <0)
 						//fprintf(stderr,"%d\t%d\t%s\t%d\t%c\t%d\t%d\t%d\n", Seed_Num, mappingStartingPosition, mi->seq[a[i].x<<1>>33].name, (int32_t)a[i].x, "+-"[a[i].x>>63], (int32_t)a[i].y, (int32_t)(a[i].y>>32&0xff), i == 0? 0 : ((int32_t)a[i].y - (int32_t)a[i-1].y) - ((int32_t)a[i].x - (int32_t)a[i-1].x));
 				// }
 				// else i=n_a;
@@ -537,7 +538,7 @@ void mm_map_frag(const mm_idx_t *mi, int n_segs, const int *qlens, const char **
 			}
 
 
-			for (int i = 1; i <= locations_per_read; ++i){ // consider best N mapping locations per read
+			for (int volatile i = 1; i <= locations_per_read; ++i){ // consider best N mapping locations per read
 				
 				if (((uint64_t)seed_map[i].seeds >= (uint64_t)MIN_SEED_NUM_PER_READ)) {
 
