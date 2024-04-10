@@ -33,7 +33,7 @@ mkdir -p ../DB
 mkdir -p ../Index
 
 echo MetaTrinity - SETUP - downloading, this will likely take VERY long
-#/bin/bash download_DB.sh ../DB/
+/bin/bash download_DB.sh ../DB/
 
 echo MetaTrinity - SETUP - generating translate_sorted.csv
 /bin/bash generate_translate_sorted.sh ../DB/db_info.txt

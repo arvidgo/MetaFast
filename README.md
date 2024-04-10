@@ -32,6 +32,7 @@ make cs -C MetaTrinity/ContainmentSearch
 make rm -C MetaTrinity/ReadMapping
 ```
 
+[How to set up the database used by Metalign](Data/RefData/Setup_DB_Index/README.md) (**not needed for reproducible evaluation**).
 
 ## <a name="use"></a>Usage
 ```sh
