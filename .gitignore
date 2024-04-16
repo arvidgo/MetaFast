@@ -1,3 +1,6 @@
 ._*
 *.o
 .vscode/
+MetaTrinity/ContainmentSearch/cs
+MetaTrinity/ReadMapping/libminimap2.a
+MetaTrinity/ReadMapping/rm
