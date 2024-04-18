@@ -3,14 +3,14 @@
 @Ranks: superkingdom|phylum|class|order|family|genus|species|strain
 
 @@TAXID	RANK	TAXPATH	TAXPATHSN	PERCENTAGE	_CAMI_genomeID	_CAMI_OTU
-10239	superkingdom	10239	Viruses	63.813
-2	superkingdom	2	Bacteria	33.5783
-1224	phylum	2|1224	Bacteria|Proteobacteria	33.5783
-1236	class	2|1224|1236	Bacteria|Proteobacteria|Gammaproteobacteria	33.5783
-135619	order	2|1224|1236|135619	Bacteria|Proteobacteria|Gammaproteobacteria|Oceanospirillales	33.5783
-224372	family	2|1224|1236|135619|224372	Bacteria|Proteobacteria|Gammaproteobacteria|Oceanospirillales|Alcanivoracaceae	33.5783
-59753	genus	2|1224|1236|135619|224372|59753	Bacteria|Proteobacteria|Gammaproteobacteria|Oceanospirillales|Alcanivoracaceae|Alcanivorax	33.5783
-239364	species	10239||||||239364	Viruses||||||uncultured human fecal virus	63.813
-172371	species	2|1224|1236|135619|224372|59753|172371	Bacteria|Proteobacteria|Gammaproteobacteria|Oceanospirillales|Alcanivoracaceae|Alcanivorax|Alcanivorax venustensis	33.5783
-239364.1.1	strain	10239||||||239364|239364.1.1	Viruses||||||uncultured human fecal virus|	63.813	239364.1.1	239364
-172371.0	strain	2|1224|1236|135619|224372|59753|172371|172371.0	Bacteria|Proteobacteria|Gammaproteobacteria|Oceanospirillales|Alcanivoracaceae|Alcanivorax|Alcanivorax venustensis|Alcanivorax venustensis unknown strain	33.5783	172371.0	172371
+10239	superkingdom	10239	Viruses	62.3485
+2	superkingdom	2	Bacteria	34.84776
+1224	phylum	2|1224	Bacteria|Proteobacteria	34.84776
+1236	class	2|1224|1236	Bacteria|Proteobacteria|Gammaproteobacteria	34.84776
+135619	order	2|1224|1236|135619	Bacteria|Proteobacteria|Gammaproteobacteria|Oceanospirillales	34.84776
+224372	family	2|1224|1236|135619|224372	Bacteria|Proteobacteria|Gammaproteobacteria|Oceanospirillales|Alcanivoracaceae	34.84776
+59753	genus	2|1224|1236|135619|224372|59753	Bacteria|Proteobacteria|Gammaproteobacteria|Oceanospirillales|Alcanivoracaceae|Alcanivorax	34.84776
+239364	species	10239||||||239364	Viruses||||||uncultured human fecal virus	62.3485
+172371	species	2|1224|1236|135619|224372|59753|172371	Bacteria|Proteobacteria|Gammaproteobacteria|Oceanospirillales|Alcanivoracaceae|Alcanivorax|Alcanivorax venustensis	34.84776
+239364.1.1	strain	10239||||||239364|239364.1.1	Viruses||||||uncultured human fecal virus|	62.3485	239364.1.1	239364
+172371.0	strain	2|1224|1236|135619|224372|59753|172371|172371.0	Bacteria|Proteobacteria|Gammaproteobacteria|Oceanospirillales|Alcanivoracaceae|Alcanivorax|Alcanivorax venustensis|Alcanivorax venustensis unknown strain	34.84776	172371.0	172371
